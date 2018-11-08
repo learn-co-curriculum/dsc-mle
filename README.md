@@ -1,5 +1,5 @@
 
-# Parameter Inference : Maximum Likelihood Estimation
+# Maximum Likelihood Estimation (MLE)
 
 ## Introduction
 
@@ -8,10 +8,9 @@
 ## Objectives
 
 You will be able to:
-* Understand and describe parametric inference based in context of identifying optimal values for model parameters. 
+* Understand and describe parametric inference based in context of identifying optimal values for model parameters
 * Understand the concept of likelihood , and the difference between likelihood and a probability
 * Describe MLE assumption of IID samples and its implications on model development
-* 
 
 ## Parameter Inference
 
