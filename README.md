@@ -3,7 +3,7 @@
 
 ## Introduction
 
-"Parameter Inference" is one of the most important concepts of predictive machine learning. We shall try to build and intuition and develop a sound understanding of the the ideas around this concept in this lesson. We will first look at the maximum likelihood estimation (MLE) for the posterior probability based on observed data. The lesson explains the in context of a random experiment involving a series of coin tosses to conclude the general formula for MLE for a binomial distribution. 
+"Parameter Inference" is one of the most important concepts of predictive machine learning. We will try to build and intuition and develop a sound understanding of the the ideas around this concept in this lesson. We will first look at the maximum likelihood estimation (MLE) for the posterior probability based on observed data. The lesson explains the context of a random experiment involving a series of coin tosses to conclude the general formula for MLE for a binomial distribution. 
 
 ## Objectives
 
