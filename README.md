@@ -3,7 +3,7 @@
 
 ## Introduction
 
-"Parameter Inference" is one of the most important concepts of predictive machine learning. We will try to build and intuition and develop a sound understanding of the the ideas around this concept in this lesson. We will first look at the maximum likelihood estimation (MLE) for the posterior probability based on observed data. The lesson explains the context of a random experiment involving a series of coin tosses to conclude the general formula for MLE for a binomial distribution. 
+"Parameter Inference" is one of the most important concepts of predictive machine learning. In this lesson, we will try to build an intuition and develop a sound understanding of the the ideas around this concept. We will first look at the maximum likelihood estimation (MLE) for the posterior probability based on observed data. The lesson explains the context of a random experiment involving a series of coin tosses to conclude the general formula for MLE for a binomial distribution. 
 
 ## Objectives
 
@@ -14,7 +14,7 @@ You will be able to:
 
 ## Parameter Inference
 
-Parameter Inference is as the process of probabilistically inferring parameter(s) for a model of our choice, which best describe the underlying dataset, used in an analytical context. Let's try to understand this with a simple experiment with a 10 times coin flip and inspecting the outcome. 
+Parameter Inference is the process of probabilistically inferring parameter(s) for a model of our choice, that is which parameter values best describe the underlying dataset, used in an analytical context. Let's try to understand this with a simple experiment with a 10 times coin flip and inspecting the outcome. 
 
 
 ```python
@@ -104,7 +104,7 @@ Here we introduce $\theta_i$, which is the parameter that governs the outcome of
 
 *The probability of seeing heads in the ith flip , given theta_i*
 
-This makes sense so far, but raises a few confusing points: If the data that depends on theta parameter, then the first ten coin flips f_1 to f_10 depend on theta_1 to theta_10  for i = 1 to 10. So looking at the outcome of first ten experiments, how can we extrapolate it to theta_11? 
+This makes sense so far, but raises a few confusing points: If the data depends on theta parameter, then the first ten coin flips f_1 to f_10 depend on theta_1 to theta_10  for i = 1 to 10. So looking at the outcome of first ten experiments, how can we extrapolate it to theta_11? 
 
 *There are two kinds people in the world: First, Those who can extrapolate from incomplete data* 
 
@@ -144,7 +144,7 @@ Note: $\prod$ signifies the product over a series, shown in the previous equatio
 
 So here we see that the **independence assumption** allows us to simplify the complex likelihood term into ten simpler factors that can be shown through a general notation in the last equation. 
 
-The independence assumption allows simplification the likelihood term considerably but we still don’t have theta_11 in the equation.
+The independence assumption allows simplification of the likelihood term but we still don’t have theta_11 in the equation.
 
 There is another assumption we can introduce, based on the fact that the coin does not change significantly after each flip i.e.:
 
@@ -223,7 +223,7 @@ So our optimization function i.e. $\theta^6(1-\theta)^4$ , that we are trying to
 
 >In mathematics, the arguments of the maxima (abbreviated arg max or argmax) are the points of the domain of some function at which the function values are maximized
 
-Remember wee are not concerned with the actual maximum value of the function. We want to **learn the value for theta** where the **function has the maximum value**.
+Remember that we are not concerned with the actual maximum value of the function. We want to **learn the value for theta** where the **function has the maximum value**.
 
 Following the monotonicity principle, our argmax function can be written with natural log *ln* as:
 
