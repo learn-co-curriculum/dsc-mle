@@ -3,7 +3,7 @@
 
 ## Introduction
 
-"Parameter Inference" is one of the most important concepts of predictive machine learning. In this lesson, we will try to build an intuition and develop a sound understanding of the the ideas around this concept. We will first look at the maximum likelihood estimation (MLE) for the posterior probability based on observed data. The lesson explains the context of a random experiment involving a series of coin tosses to conclude the general formula for MLE for a binomial distribution. 
+"Parameter Inference" is one of the most important concepts of predictive machine learning. In this lesson, you will begin to build an intuition surrounding the the ideas around this concept. You'll first look at the maximum likelihood estimation (MLE) for the posterior probability based on observed data. (A direct application of Bayes Theorem.) From there, you'll conduct a random experiment involving a series of coin tosses to derive the general formula for MLE of a binomial distribution. 
 
 ## Objectives
 
@@ -42,38 +42,126 @@ def coinToss():
 lst = coinToss()
 ```
 
-    Number of times to flip coin: 10
+    Number of times to flip coin: 100
     Toss 1 : Tails
-    Toss 2 : Tails
-    Toss 3 : Heads
+    Toss 2 : Heads
+    Toss 3 : Tails
     Toss 4 : Tails
-    Toss 5 : Tails
-    Toss 6 : Heads
-    Toss 7 : Tails
-    Toss 8 : Tails
+    Toss 5 : Heads
+    Toss 6 : Tails
+    Toss 7 : Heads
+    Toss 8 : Heads
     Toss 9 : Heads
-    Toss 10 : Heads
-    ['Tails', 'Tails', 'Heads', 'Tails', 'Tails', 'Heads', 'Tails', 'Tails', 'Heads', 'Heads']
-    46
+    Toss 10 : Tails
+    Toss 11 : Heads
+    Toss 12 : Heads
+    Toss 13 : Heads
+    Toss 14 : Heads
+    Toss 15 : Heads
+    Toss 16 : Heads
+    Toss 17 : Heads
+    Toss 18 : Tails
+    Toss 19 : Heads
+    Toss 20 : Tails
+    Toss 21 : Heads
+    Toss 22 : Tails
+    Toss 23 : Tails
+    Toss 24 : Heads
+    Toss 25 : Tails
+    Toss 26 : Heads
+    Toss 27 : Heads
+    Toss 28 : Heads
+    Toss 29 : Heads
+    Toss 30 : Tails
+    Toss 31 : Heads
+    Toss 32 : Heads
+    Toss 33 : Tails
+    Toss 34 : Tails
+    Toss 35 : Heads
+    Toss 36 : Heads
+    Toss 37 : Tails
+    Toss 38 : Tails
+    Toss 39 : Heads
+    Toss 40 : Heads
+    Toss 41 : Tails
+    Toss 42 : Tails
+    Toss 43 : Heads
+    Toss 44 : Tails
+    Toss 45 : Tails
+    Toss 46 : Heads
+    Toss 47 : Tails
+    Toss 48 : Tails
+    Toss 49 : Heads
+    Toss 50 : Heads
+    Toss 51 : Heads
+    Toss 52 : Tails
+    Toss 53 : Heads
+    Toss 54 : Heads
+    Toss 55 : Heads
+    Toss 56 : Tails
+    Toss 57 : Heads
+    Toss 58 : Heads
+    Toss 59 : Tails
+    Toss 60 : Heads
+    Toss 61 : Tails
+    Toss 62 : Tails
+    Toss 63 : Heads
+    Toss 64 : Heads
+    Toss 65 : Tails
+    Toss 66 : Heads
+    Toss 67 : Tails
+    Toss 68 : Tails
+    Toss 69 : Heads
+    Toss 70 : Heads
+    Toss 71 : Heads
+    Toss 72 : Tails
+    Toss 73 : Heads
+    Toss 74 : Tails
+    Toss 75 : Heads
+    Toss 76 : Tails
+    Toss 77 : Heads
+    Toss 78 : Tails
+    Toss 79 : Tails
+    Toss 80 : Tails
+    Toss 81 : Heads
+    Toss 82 : Tails
+    Toss 83 : Tails
+    Toss 84 : Heads
+    Toss 85 : Tails
+    Toss 86 : Heads
+    Toss 87 : Heads
+    Toss 88 : Heads
+    Toss 89 : Heads
+    Toss 90 : Heads
+    Toss 91 : Heads
+    Toss 92 : Heads
+    Toss 93 : Tails
+    Toss 94 : Heads
+    Toss 95 : Tails
+    Toss 96 : Tails
+    Toss 97 : Tails
+    Toss 98 : Tails
+    Toss 99 : Tails
+    Toss 100 : Tails
+    ['Tails', 'Heads', 'Tails', 'Tails', 'Heads', 'Tails', 'Heads', 'Heads', 'Heads', 'Tails', 'Heads', 'Heads', 'Heads', 'Heads', 'Heads', 'Heads', 'Heads', 'Tails', 'Heads', 'Tails', 'Heads', 'Tails', 'Tails', 'Heads', 'Tails', 'Heads', 'Heads', 'Heads', 'Heads', 'Tails', 'Heads', 'Heads', 'Tails', 'Tails', 'Heads', 'Heads', 'Tails', 'Tails', 'Heads', 'Heads', 'Tails', 'Tails', 'Heads', 'Tails', 'Tails', 'Heads', 'Tails', 'Tails', 'Heads', 'Heads', 'Heads', 'Tails', 'Heads', 'Heads', 'Heads', 'Tails', 'Heads', 'Heads', 'Tails', 'Heads', 'Tails', 'Tails', 'Heads', 'Heads', 'Tails', 'Heads', 'Tails', 'Tails', 'Heads', 'Heads', 'Heads', 'Tails', 'Heads', 'Tails', 'Heads', 'Tails', 'Heads', 'Tails', 'Tails', 'Tails', 'Heads', 'Tails', 'Tails', 'Heads', 'Tails', 'Heads', 'Heads', 'Heads', 'Heads', 'Heads', 'Heads', 'Heads', 'Tails', 'Heads', 'Tails', 'Tails', 'Tails', 'Tails', 'Tails', 'Tails']
+    5545
 
 
 Remember its a random experiment so the output will change everytime you run it. Here is the output sequence we'll use in this lesson: 
 ```
 ['Heads', 'Heads', 'Tails', 'Tails', 'Tails', 'Heads', 'Tails', 'Heads', 'Heads', 'Heads']
 ```
-Considering its a random experiment, we can say that there has to be *some* underlying parameter for the outcome of a coin flip. Also, consider other random experiments with dice rolls. Can we identify a parameter that determines the outcome of such experiments ? 
+Considering its a random experiment, you can say that there has to be *some* underlying parameter for the outcome of a coin flip. Also, consider other random experiments with dice rolls. Can you identify a parameter that determines the outcome of such experiments ? 
 
-Parameter Inference is all to do with identifying that parameter with its optimal value. The first key step in this process is Maximum Likelihood Estimation (MLE). Below we shall look into this process with our simple coin flip example. 
+Parameter Inference is all to do with identifying that parameter with its optimal value. The first key step in this process is Maximum Likelihood Estimation (MLE).
 
 ## Maximum Likelihood Estimation
 
-MLE primarily deals with **determining the parameters** that **maximize the probability of the data**. Such a determination can help us predict the outcome of future experiments e.g. If we Toss the coin 1 more time, what is the probability of seeing a Head? 
+MLE primarily deals with **determining the parameters** that **maximize the probability of the data**. Such a determination can help you predict the outcome of future experiments e.g. If we Toss the coin 1 more time, what is the probability of seeing a Head? 
 
 * Its a fair coin so probability is 0.5. 
 
 This is a safe assumption as it assumes independence between coin flips and hence past events have no impact on future ones. 
-
-We know we can also calculate the probability based on outcomes of previous events
 
 
 ```python
@@ -84,21 +172,21 @@ p_head
 
 
 
-    0.4
+    5.5
 
 
 
-With both these approaches in hand , let's see which answer is more suitable by creating a general case from this example. We want to know the probability of 11th flip $ p_{11}(f_{11})$, being a head so we can write:
+With both these approaches in hand , let's see which answer is more suitable by creating a general case from this example. You want to know the probability of 11th flip $ p_{11}(f_{11})$, being a head so you can write:
 
 > $p_{11}(f_{11}=Heads)$
 
-We can also write above for calculating probability of $ith$ flip being a Head:
+You can also write above for calculating probability of $ith$ flip being a Head:
 
 > $p_i(f_i = Heads) = \theta_i$
 
 
 
-Here we introduce $\theta_i$, which is the parameter that governs the outcome of ith flip. To signify that the probability distribution depends on $\theta_i$, we can use conditioning as we saw earlier and write down the last equation to show the probability distribution function along with its dependence on theta_i. 
+Here $\theta_i$ is the parameter that governs the outcome of ith flip. To signify that the probability distribution depends on $\theta_i$, you can use conditioning as you saw earlier and write down the last equation to show the probability distribution function along with its dependence on theta_i. 
 
 > $p_i((f_i = Heads) | \theta_i)$
 
@@ -106,9 +194,8 @@ Here we introduce $\theta_i$, which is the parameter that governs the outcome of
 
 This makes sense so far, but raises a few confusing points: If the data depends on theta parameter, then the first ten coin flips f_1 to f_10 depend on theta_1 to theta_10  for i = 1 to 10. So looking at the outcome of first ten experiments, how can we extrapolate it to theta_11? 
 
-*There are two kinds people in the world: First, Those who can extrapolate from incomplete data* 
 
-So let's see how we can do this. If we say that random outcome of a sequence of flips is governed (or modeled) by the parameters theta_1 to theta_10 we calculate the probability function based on observed data as:
+Here's how you can do this&mdash;if you say that random outcome of a sequence of flips is governed (or modeled) by the parameters theta_1 to theta_10, you can calculate the probability function based on observed data as:
 
 > $P (Heads, Heads, Tails, Tails, Tails, Heads, Tails, Heads, Heads, Heads) | \theta_{1}\theta_{2} .. \theta_{10})$
 
@@ -117,10 +204,8 @@ So let's see how we can do this. If we say that random outcome of a sequence of 
 
 
 
-Apparently, still we know nothing about theta_1 .. theta_10, and how these thetas are connected to theta_11?
 
-This is where Maximum Likelihood Estimation steps into the equation. The problem we have now is that we need to find values of thetas 1 to 10.  MLE helps find theta_i’s such that that probability function shown above is **as high as possible** and this is the basic principle of MLE. Let's develop our intuition further on this. 
-
+This is where Maximum Likelihood Estimation steps into the equation. The problem you have now is that you need to find values of thetas 1 to 10.  MLE helps find theta_i’s such that that probability function shown above is **as high as possible** and this is the basic principle of MLE.
 
 
 #### Likelihood - The probability of data
@@ -142,27 +227,27 @@ Note: $\prod$ signifies the product over a series, shown in the previous equatio
 
 ### MLE Assumptions
 
-So here we see that the **independence assumption** allows us to simplify the complex likelihood term into ten simpler factors that can be shown through a general notation in the last equation. 
+Note here that the **independence assumption** allows you to simplify the complex likelihood term into ten simpler factors that can be shown through a general notation in the last equation. 
 
-The independence assumption allows simplification of the likelihood term but we still don’t have theta_11 in the equation.
+The independence assumption allows simplification of the likelihood term but you still don’t have theta_11 in the equation.
 
-There is another assumption we can introduce, based on the fact that the coin does not change significantly after each flip i.e.:
+There is another assumption you can introduce, based on the fact that the coin does not change significantly after each flip i.e.:
 
 * **The flips are quantitatively same, i.e., they are identically distributed**. 
 
-This implies that the flips are taking place under similar circumstances, we can assume that the parameter governing the flips is one and same i.e. just the $\theta$ without any subscripts. BAse on this assumption, we can rewrite above equation as :
+This implies that the flips are taking place under similar circumstances, you can assume that the parameter governing the flips is one and same i.e. just the $\theta$ without any subscripts. Based on this assumption, you can rewrite above equation as :
 
 >$\prod_{i=1}^{10} p_i(F_i = f_i | \theta_i) = \prod_{i=1}^{10} p(F_i = f_i | \theta) $
 
-Our assumption leads us to believe that 10 flips we observed are governed by the same parameter theta. We now have just one parameter governing the entire sequence of coin flips, and that includes the 11th flip as well. 
+This assumption leads you to believe that the 10 flips are governed by the same parameter theta. You now have just one parameter governing the entire sequence of coin flips, and that includes the 11th flip as well. 
 
-This is how MLE allows us to connect first 10 coin flips to the 11th coin flip and is the key for inference.
+This is how MLE allows you to connect first 10 coin flips to the 11th coin flip and is the key for inference.
 
-### The two assumptions we made are used so often in Machine Learning that they have a special name together as an entity : "The i.i.d. assumption" i.e. Independent and Identically distributed samples.
+### The two assumptions you made are used so often in Machine Learning that they have a special name together as an entity : "The i.i.d. assumption" i.e. Independent and Identically distributed samples.
 
-This means that the 10 flips are independent and identically distributed which is great as it will allow us to explicitly write down the likelihood that we are trying to optimize. 
+This means that the 10 flips are independent and identically distributed which is great as it will allow you to explicitly write down the likelihood that you are trying to optimize. 
 
-Remember that theta was defined as the probability of the flip showing up Heads; the probability of our sequence w.r.t. theta can now be formulated as:
+Remember that theta was defined as the probability of the flip showing up Heads; the probability of the sequence w.r.t. theta can now be formulated as:
 
 $ \prod_{i=1}^{10} p(F_i = f_i | \theta)$ 
 
@@ -175,25 +260,22 @@ $=\theta^6(1-\theta)^4$
 * The sequence:  H,H,T,T,T,H,T,H,H,H
 
 
-We see here the i.i.d. assumptions simplifies  the likelihood function to a simple polynomial; to a point where we can **start optimizing the function for the parameter theta**.
+You see here the i.i.d. assumptions simplifies  the likelihood function to a simple polynomial; to a point where you can **start optimizing the function for the parameter theta**.
 
 
 
 This simplified polynomial expression can be interpreted as a function of theta i.e., 
 > $f(\theta)$ 
 
-Now we want to find out the maxima (maximum likelihood) of this function. 
+Now you want to find out the maxima (maximum likelihood) of this function. 
 
 <img src="der.png" width= 200>
 
 
-Following the intuition in the image above, We can achieve theta this by taking the derivative 
+Following the intuition in the image above, you can achieve theta this by taking the derivative 
 > $\frac{df}{d(\theta)}$ 
 
-We set this  zero, and solve for theta. And then verify the critical point i.e. maxima, by inserting it into the second derivative of f(theta). This is a simple approach , however, the application of product rule repeatedly in this process could be a technically challenging process. This calculation can be simplified using a monotonic function. 
-
-
-
+Set this  zero, and solve for theta. Then verify the critical point i.e. maxima, by inserting it into the second derivative of f(theta). This is a simple approach, however, the application of product rule repeatedly in this process could be a technically challenging process. This calculation can be simplified using a monotonic function. 
 
 
 ### Monotonic function
@@ -202,30 +284,30 @@ We set this  zero, and solve for theta. And then verify the critical point i.e. 
 
 
 
-According to this theory, if we apply a monotonic function to another function , like the one we are trying to optimize above, this application will preserve the critical points (maxima in this case) of the original function. Logarithmic functions are normally used within the domain of machine learning to achieve the functionality of monotonicity  The logarithmic function is described as:
+According to this theory, if you apply a monotonic function to another function , like the one you are trying to optimize above, this application will preserve the critical points (maxima in this case) of the original function. Logarithmic functions are normally used within the domain of machine learning to achieve the functionality of monotonicity  The logarithmic function is described as:
 
 > $log_b(x)$
 
 * where b is any number such that b > 0, b≠ 1, and x > 0. 
 * The function is read "log base b of x".
 
-The logarithm y is the exponent to which b must be raised to get x. The behaviour of a log function can be understood from following image.
+The logarithm y is the exponent to which b must be raised to get x. The behavior of a log function can be understood from following image.
 
 
 <img src="log.png" width=700>
 
 
-So this helps us realize that **log of f(θ) i.e. log(f(θ)) will have the save maxima as the likelihood function f(θ).** This is better known as the **log likelihood**. 
+This helps you realize that **log of f(θ) i.e. log(f(θ)) will have the save maxima as the likelihood function f(θ).** This is better known as the **log likelihood**. 
 
-So our optimization function i.e. $\theta^6(1-\theta)^4$ , that we are trying to optimize w.r.t. theta can be written down as:
+Thus, the optimization function i.e. $\theta^6(1-\theta)^4$ , that you're trying to optimize w.r.t. theta can be written down as:
 
 >$\underset{\theta}{\operatorname{argmax}} \theta^6(1-\theta)^4$
 
 >In mathematics, the arguments of the maxima (abbreviated arg max or argmax) are the points of the domain of some function at which the function values are maximized
 
-Remember that we are not concerned with the actual maximum value of the function. We want to **learn the value for theta** where the **function has the maximum value**.
+Remember that you are not concerned with the actual maximum value of the function. You want to **learn the value for theta** where the **function has the maximum value**.
 
-Following the monotonicity principle, our argmax function can be written with natural log *ln* as:
+Following the monotonicity principle, the argmax function can be written with natural log *ln* as:
 
 >$\underset{\theta}{\operatorname{argmax}} ln(\theta^6(1-\theta)^4)$
  
@@ -241,7 +323,7 @@ Let's call our log likelihood function $g(\theta)$, take its derivative and set 
 |T| are the number of tails = 4 
 |H| are the number of heads = 6 
 
-We are simply solving for a general case here , so we shall use |T| and |H|
+You are simply solving for a general case here , so use |T| and |H|
 
 > $|H|\frac{1}{\theta} + {|T|}\frac{1}{1-\theta}(-1) = 0 $
 
@@ -249,32 +331,26 @@ We are simply solving for a general case here , so we shall use |T| and |H|
 
 > $\theta = \frac{|H|}{|H|+ |T|}$
 
-So here, we have a Maximum Likelihood Function $\theta_MLE$ for any given sequence of coins. 
+This is the Maximum Likelihood Function $\theta_MLE$ for any given sequence of coins. 
 
 $$\theta_{MLE} = \frac{|H|}{|H|+ |T|}$$
 
-For our initial problem, where H = 6  and T = 4, we get MLE for theta as 6/10 = 0.6 , or , 60% chance of seeing a head for the 11th coin given the data from first 10 coin flips. 
+For the initial problem, where H = 6  and T = 4, you get MLE for theta as 6/10 = 0.6 , or , 60% chance of seeing a head for the 11th coin given the data from first 10 coin flips. 
 
-> This maximum is called the **MLE for theta** as it makes our observed sequence **most likely**.
+> This maximum is called the **MLE for theta** as it makes the observed sequence **most likely**.
 
 ## Limitations of MLE
 
-Consider a scenario where you get this sequence by total chance: [T,T,T,T,T]. What would be the probability of seeing a head at 6th coin toss? According to our MLE formula, it would be zero. And this can serious hurt an analytical process as MLE heavily depends on past data to find the likelihood function.  This tells us that finding MLE only a first step for Parameter Estimation. We shall come across more sophisticated approaches like Maximum Aposteriori Estimate (MAP) and Fully Bayesian Analysis. 
-
-An example similar to above is described [Here](https://alexanderetz.com/2015/04/15/understanding-bayes-a-look-at-the-likelihood/) in context of Bayes theorem and great visual illustrations. 
+Consider a scenario where you get this sequence by total chance: [T,T,T,T,T]. According to the derived MLE formula, the probability of seeing a head at 6th coin toss would be zero. This demonstrates how MLE heavily depends on past data to find the likelihood function. It also indicates that MLE is only a first step for Parameter Estimation. We shall come across more sophisticated approaches like Maximum Aposteriori Estimate (MAP) and Fully Bayesian Analysis. 
 
 ## Additional Resources
-Due to this section being heavy in maths and some new concepts like optimization, maximas and minimas, monotonicity and log functions etc. You are advised to go through following resources to see more example of MLE calculation and get a deep dive into necessary mathematics. 
+This section was pretty math heavy and included many new concepts like optimization, maximas and minimas, monotonicity and log functions. With that, take some time to go through following resources to see more example of MLE calculation and get a deep dive into the underlying mathematical theory. 
 
 * [Probability Concepts Explained: Maximum Likelihood Estimation](https://towardsdatascience.com/probability-concepts-explained-maximum-likelihood-estimation-c7b4342fdbb1) - Example for calculating MLE with normal distributions.
 * [IID Statistics: Independent and Identically Distributed ](https://www.statisticshowto.datasciencecentral.com/iid-statistics/)
 * [Monotonically Increasing and Decreasing function: An algebraic approach](https://opencurriculum.org/5512/monotonically-increasing-and-decreasing-functions-an-algebraic-approach/)
 * [Logarithm Functions](https://mathbitsnotebook.com/Algebra2/Exponential/EXLogFunctions.html)
 
-## Level Up - Optional 
-
-* Take the value of theta calculated in this lesson and substitute this critical value in the second derivative to mathematically verify that it is indeed the maximum
-
 ## Summary 
 
-In this lesson we saw how o develop an intuition around MLE as a popular estimation technique. We saw how we can use monotonicity principle of MAthematics to simplify complex probability calculations into simple arithmatic operations. We looked at a simple example of a coin toss for this intuition. NExt, we shall look at more parametric estimation techniques which are deemed necessary in machine learning. 
+In this lesson, you began to develop an intuition surrounding MLE. You saw how to use the principle of monotonicity to simplify complex probability calculations into simple arithmetic operations. You also looked at a simple example of a coin toss for MLE. You're well on your way to conducting further complex statistical experiments using Bayesian techniques!
