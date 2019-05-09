@@ -269,7 +269,7 @@ This simplified polynomial expression can be interpreted as a function of theta 
 
 Now you want to find out the maxima (maximum likelihood) of this function. 
 
-<img src="der.png" width= 200>
+<img src="images/der.png" width= "200">
 
 
 Following the intuition in the image above, you can achieve theta this by taking the derivative 
@@ -294,7 +294,7 @@ According to this theory, if you apply a monotonic function to another function 
 The logarithm y is the exponent to which b must be raised to get x. The behavior of a log function can be understood from following image.
 
 
-<img src="log.png" width=700>
+<img src="images/log.png" width=700>
 
 
 This helps you realize that **log of f(θ) i.e. log(f(θ)) will have the save maxima as the likelihood function f(θ).** This is better known as the **log likelihood**. 
