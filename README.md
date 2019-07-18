@@ -294,7 +294,7 @@ According to this theory, if you apply a monotonic function to another function 
 The logarithm y is the exponent to which b must be raised to get x. The behavior of a log function can be understood from following image.
 
 
-<img src="images/new_log.png" width=700>
+<img src="images/new_log.png" width="700">
 
 
 This helps you realize that **log of f(θ) i.e. log(f(θ)) will have the save maxima as the likelihood function f(θ).** This is better known as the **log likelihood**. 
