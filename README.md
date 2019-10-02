@@ -3,7 +3,7 @@
 
 ## Introduction
 
-"Parameter Inference" is one of the most important concepts of predictive machine learning. In this lesson, you will begin to build an intuition surrounding the the ideas around this concept. You'll first look at the maximum likelihood estimation (MLE) for the posterior probability based on observed data. (A direct application of Bayes Theorem.) From there, you'll conduct a random experiment involving a series of coin tosses to derive the general formula for MLE of a binomial distribution. 
+"Parameter Inference" is one of the most important concepts of predictive machine learning. In this lesson, you will begin to build an intuition surrounding the ideas around this concept. You'll first look at the maximum likelihood estimation (MLE) for the posterior probability based on observed data. (A direct application of Bayes Theorem.) From there, you'll conduct a random experiment involving a series of coin tosses to derive the general formula for MLE of a binomial distribution. 
 
 ## Objectives
 
@@ -151,7 +151,7 @@ Remember its a random experiment so the output will change everytime you run it.
 ```
 ['Heads', 'Heads', 'Tails', 'Tails', 'Tails', 'Heads', 'Tails', 'Heads', 'Heads', 'Heads']
 ```
-Considering its a random experiment, you can say that there has to be *some* underlying parameter for the outcome of a coin flip. Also, consider other random experiments with dice rolls. Can you identify a parameter that determines the outcome of such experiments ? 
+Considering its a random experiment, you can say that there has to be *some* underlying parameter for the outcome of a coin flip. Also, consider other random experiments with dice rolls. Can you identify a parameter that determines the outcome of such experiments? 
 
 Parameter Inference is all to do with identifying that parameter with its optimal value. The first key step in this process is Maximum Likelihood Estimation (MLE).
 
@@ -159,7 +159,7 @@ Parameter Inference is all to do with identifying that parameter with its optima
 
 MLE primarily deals with **determining the parameters** that **maximize the probability of the data**. Such a determination can help you predict the outcome of future experiments e.g. If we Toss the coin 1 more time, what is the probability of seeing a Head? 
 
-* Its a fair coin so probability is 0.5. 
+* It's a fair coin so the probability is 0.5. 
 
 This is a safe assumption as it assumes independence between coin flips and hence past events have no impact on future ones. 
 
@@ -176,17 +176,17 @@ p_head
 
 
 
-With both these approaches in hand , let's see which answer is more suitable by creating a general case from this example. You want to know the probability of 11th flip $ p_{11}(f_{11})$, being a head so you can write:
+With both these approaches in hand, let's see which answer is more suitable by creating a general case from this example. You want to know the probability of 11th flip $ p_{11}(f_{11})$, being a head so you can write:
 
 > $p_{11}(f_{11}=Heads)$
 
-You can also write above for calculating probability of $ith$ flip being a Head:
+You can also write above for calculating the probability of $ith$ flip being a Head:
 
 > $p_i(f_i = Heads) = \theta_i$
 
 
 
-Here $\theta_i$ is the parameter that governs the outcome of ith flip. To signify that the probability distribution depends on $\theta_i$, you can use conditioning as you saw earlier and write down the last equation to show the probability distribution function along with its dependence on theta_i. 
+Here $\theta_i$ is the parameter that governs the outcome of _ith_ flip. To signify that the probability distribution depends on $\theta_i$, you can use conditioning as you saw earlier and write down the last equation to show the probability distribution function along with its dependence on theta_i. 
 
 > $p_i((f_i = Heads) | \theta_i)$
 
