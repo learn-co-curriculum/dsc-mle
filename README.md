@@ -3,14 +3,18 @@
 
 ## Introduction
 
-"Parameter Inference" is one of the most important concepts of predictive machine learning. In this lesson, you will begin to build an intuition surrounding the ideas around this concept. You'll first look at the maximum likelihood estimation (MLE) for the posterior probability based on observed data. (A direct application of Bayes Theorem.) From there, you'll conduct a random experiment involving a series of coin tosses to derive the general formula for MLE of a binomial distribution. 
+"Parameter Inference" is one of the most important concepts of predictive machine learning. In this lesson, you will begin to build an intuition surrounding the ideas around this concept. You'll first look at the maximum likelihood estimation (MLE) for the posterior probability based on observed data. (A direct application of Bayes theorem.) From there, you'll conduct a random experiment involving a series of coin tosses to derive the general formula for MLE of a binomial distribution. 
 
 ## Objectives
 
 You will be able to:
-* Understand and describe parametric inference based in context of identifying optimal values for model parameters
-* Understand the concept of likelihood , and the difference between likelihood and a probability
-* Describe MLE assumption of IID samples and its implications on model development
+
+- Describe the process of parameter inference 
+- Define likelihood and compare it to probability 
+- List the two assumptions of Maximum Likelihood Estimation 
+- Describe how Maximum Likelihood Estimation is related to parameter estimation 
+
+
 
 ## Parameter Inference
 
@@ -157,15 +161,15 @@ Parameter Inference is all to do with identifying that parameter with its optima
 
 ## Maximum Likelihood Estimation
 
-MLE primarily deals with **determining the parameters** that **maximize the probability of the data**. Such a determination can help you predict the outcome of future experiments e.g. If we Toss the coin 1 more time, what is the probability of seeing a Head? 
+MLE primarily deals with **determining the parameters** that **maximize the probability of the data**. Such a determination can help you predict the outcome of future experiments, e.g., if we toss the coin 1 more time, what is the probability of seeing a head? 
 
-* It's a fair coin so the probability is 0.5. 
+* It's a fair coin so the probability is 0.5  
 
 This is a safe assumption as it assumes independence between coin flips and hence past events have no impact on future ones. 
 
 
 ```python
-p_head = lst.count("Heads")/10
+p_head = lst.count('Heads')/10
 p_head
 ```
 
@@ -178,15 +182,15 @@ p_head
 
 With both these approaches in hand, let's see which answer is more suitable by creating a general case from this example. You want to know the probability of 11th flip $ p_{11}(f_{11})$, being a head so you can write:
 
-> $p_{11}(f_{11}=Heads)$
+> $p_{11}(f_{11}= \text{Heads})$
 
-You can also write above for calculating the probability of $ith$ flip being a Head:
+You can also write above for calculating the probability of $ith$ flip being a head:
 
-> $p_i(f_i = Heads) = \theta_i$
+> $p_i(f_i = \text{Heads}) = \theta_i$
 
 
 
-Here $\theta_i$ is the parameter that governs the outcome of _ith_ flip. To signify that the probability distribution depends on $\theta_i$, you can use conditioning as you saw earlier and write down the last equation to show the probability distribution function along with its dependence on theta_i. 
+Here $\theta_i$ is the parameter that governs the outcome of _ith_ flip. To signify that the probability distribution depends on $\theta_i$, you can use conditioning as you saw earlier and write down the last equation to show the probability distribution function along with its dependence on $\text{theta_i}$. 
 
 > $p_i((f_i = Heads) | \theta_i)$
 
@@ -225,7 +229,7 @@ Going back to our coin flip example. If in our understanding, the coin flips do 
 
 Note: $\prod$ signifies the product over a series, shown in the previous equation, just as $\Sigma$ denotes summation over a series.
 
-### MLE Assumptions
+### MLE assumptions
 
 Note here that the **independence assumption** allows you to simplify the complex likelihood term into ten simpler factors that can be shown through a general notation in the last equation. 
 
@@ -243,11 +247,11 @@ This assumption leads you to believe that the 10 flips are governed by the same 
 
 This is how MLE allows you to connect first 10 coin flips to the 11th coin flip and is the key for inference.
 
-### The two assumptions you made are used so often in Machine Learning that they have a special name together as an entity : "The i.i.d. assumption" i.e. Independent and Identically distributed samples.
+> The two assumptions you made are used so often in Machine Learning that they have a special name together as an entity : "The i.i.d. assumption" i.e. Independent and Identically distributed samples.
 
 This means that the 10 flips are independent and identically distributed which is great as it will allow you to explicitly write down the likelihood that you are trying to optimize. 
 
-Remember that theta was defined as the probability of the flip showing up Heads; the probability of the sequence w.r.t. theta can now be formulated as:
+Remember that theta was defined as the probability of the flip showing up heads; the probability of the sequence w.r.t. theta can now be formulated as:
 
 $ \prod_{i=1}^{10} p(F_i = f_i | \theta)$ 
 
@@ -257,7 +261,7 @@ $=\theta^6(1-\theta)^4$
 
 * theta = Probability of seeing a head
 * 1 - theta = Probability of seeing a tail
-* The sequence:  H,H,T,T,T,H,T,H,H,H
+* The sequence:  H, H, T, T, T, H, T, H, H, H
 
 
 You see here the i.i.d. assumptions simplifies  the likelihood function to a simple polynomial; to a point where you can **start optimizing the function for the parameter theta**.
@@ -272,24 +276,23 @@ Now you want to find out the maxima (maximum likelihood) of this function.
 <img src="images/der.png" width= "200">
 
 
-Following the intuition in the image above, you can achieve theta this by taking the derivative 
+Following the intuition in the image above, you can achieve this theta by taking the derivative 
 > $\frac{df}{d(\theta)}$ 
 
-Set this  zero, and solve for theta. Then verify the critical point i.e. maxima, by inserting it into the second derivative of f(theta). This is a simple approach, however, the application of product rule repeatedly in this process could be a technically challenging process. This calculation can be simplified using a monotonic function. 
+Set this  zero, and solve for theta. Then verify the critical point i.e. maxima, by inserting it into the second derivative of $f(\theta)$. This is a simple approach, however, the application of product rule repeatedly in this process could be a technically challenging process. This calculation can be simplified using a monotonic function. 
 
 
 ### Monotonic function
 
-> In mathematics, a monotonic function(or monotone function) is a function between ordered sets that preserves or reverses the given order. This concept first arose in calculus, and was later generalized to the more abstract setting of order theory. [Wiki](https://en.wikipedia.org/wiki/Monotonic_function)
+> In mathematics, a [monotonic function](https://en.wikipedia.org/wiki/Monotonic_function) (or monotone function) is a function between ordered sets that preserves or reverses the given order. This concept first arose in calculus, and was later generalized to the more abstract setting of order theory. 
 
 
-
-According to this theory, if you apply a monotonic function to another function , like the one you are trying to optimize above, this application will preserve the critical points (maxima in this case) of the original function. Logarithmic functions are normally used within the domain of machine learning to achieve the functionality of monotonicity  The logarithmic function is described as:
+According to this theory, if you apply a monotonic function to another function, like the one you are trying to optimize above, this application will preserve the critical points (maxima in this case) of the original function. Logarithmic functions are normally used within the domain of machine learning to achieve the functionality of monotonicity. The logarithmic function is described as:
 
 > $log_b(x)$
 
-* where b is any number such that b > 0, b≠ 1, and x > 0. 
-* The function is read "log base b of x".
+* where b is any number such that b > 0, b ≠ 1, and x > 0  
+* The function is read "log base b of x" 
 
 The logarithm y is the exponent to which b must be raised to get x. The behavior of a log function can be understood from following image.
 
@@ -301,22 +304,19 @@ This helps you realize that **log of f(θ) i.e. log(f(θ)) will have the save ma
 
 Thus, the optimization function i.e. $\theta^6(1-\theta)^4$ , that you're trying to optimize w.r.t. theta can be written down as:
 
->$\underset{\theta}{\operatorname{argmax}} \theta^6(1-\theta)^4$
+> $\underset{\theta}{\operatorname{argmax}} \theta^6(1-\theta)^4$
 
->In mathematics, the arguments of the maxima (abbreviated arg max or argmax) are the points of the domain of some function at which the function values are maximized
+> In mathematics, the arguments of the maxima (abbreviated arg max or argmax) are the points of the domain of some function at which the function values are maximized. 
 
 Remember that you are not concerned with the actual maximum value of the function. You want to **learn the value for theta** where the **function has the maximum value**.
 
 Following the monotonicity principle, the argmax function can be written with natural log *ln* as:
 
->$\underset{\theta}{\operatorname{argmax}} ln(\theta^6(1-\theta)^4)$
+> $\underset{\theta}{\operatorname{argmax}} ln(\theta^6(1-\theta)^4)$
  
-> $=\underset{\theta}{\operatorname{argmax}} 6 (ln (\theta)) *4 (ln(1-\theta))$
+> $=\underset{\theta}{\operatorname{argmax}} 6 (ln (\theta)) + 4 (ln(1-\theta))$
 
 Let's call our log likelihood function $g(\theta)$, take its derivative and set it to zero. 
-
-
-
 
 > $ \frac{d}{d\theta}[g(\theta)] = |H|\frac{1}{\theta} + |T|\frac{1}{1-\theta}(-1)$
 
@@ -341,10 +341,10 @@ For the initial problem, where H = 6  and T = 4, you get MLE for theta as 6/10 =
 
 ## Limitations of MLE
 
-Consider a scenario where you get this sequence by total chance: [T,T,T,T,T]. According to the derived MLE formula, the probability of seeing a head at 6th coin toss would be zero. This demonstrates how MLE heavily depends on past data to find the likelihood function. It also indicates that MLE is only a first step for Parameter Estimation. We shall come across more sophisticated approaches like Maximum Aposteriori Estimate (MAP) and Fully Bayesian Analysis. 
+Consider a scenario where you get this sequence by total chance: [T, T, T, T, T]. According to the derived MLE formula, the probability of seeing a head at 6th coin toss would be zero. This demonstrates how MLE heavily depends on past data to find the likelihood function. It also indicates that MLE is only a first step for parameter estimation. We shall come across more sophisticated approaches like Maximum Aposteriori Estimate (MAP) and Fully Bayesian Analysis. 
 
 ## Additional Resources
-This section was pretty math heavy and included many new concepts like optimization, maximas and minimas, monotonicity and log functions. With that, take some time to go through following resources to see more example of MLE calculation and get a deep dive into the underlying mathematical theory. 
+This section was pretty math heavy and included many new concepts like optimization, maximas and minimas, monotonicity, and log functions. With that, take some time to go through following resources to see more example of MLE calculation and get a deep dive into the underlying mathematical theory. 
 
 * [Probability Concepts Explained: Maximum Likelihood Estimation](https://towardsdatascience.com/probability-concepts-explained-maximum-likelihood-estimation-c7b4342fdbb1) - Example for calculating MLE with normal distributions.
 * [IID Statistics: Independent and Identically Distributed ](https://www.statisticshowto.datasciencecentral.com/iid-statistics/)
