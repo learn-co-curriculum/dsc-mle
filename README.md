@@ -1,4 +1,3 @@
-
 # Maximum Likelihood Estimation (MLE)
 
 ## Introduction
@@ -47,108 +46,108 @@ lst = coinToss()
 ```
 
     Number of times to flip coin: 100
-    Toss 1 : Tails
+    Toss 1 : Heads
     Toss 2 : Heads
-    Toss 3 : Tails
-    Toss 4 : Tails
+    Toss 3 : Heads
+    Toss 4 : Heads
     Toss 5 : Heads
     Toss 6 : Tails
     Toss 7 : Heads
     Toss 8 : Heads
-    Toss 9 : Heads
+    Toss 9 : Tails
     Toss 10 : Tails
-    Toss 11 : Heads
+    Toss 11 : Tails
     Toss 12 : Heads
-    Toss 13 : Heads
-    Toss 14 : Heads
+    Toss 13 : Tails
+    Toss 14 : Tails
     Toss 15 : Heads
     Toss 16 : Heads
-    Toss 17 : Heads
+    Toss 17 : Tails
     Toss 18 : Tails
-    Toss 19 : Heads
+    Toss 19 : Tails
     Toss 20 : Tails
-    Toss 21 : Heads
+    Toss 21 : Tails
     Toss 22 : Tails
     Toss 23 : Tails
     Toss 24 : Heads
-    Toss 25 : Tails
+    Toss 25 : Heads
     Toss 26 : Heads
     Toss 27 : Heads
     Toss 28 : Heads
-    Toss 29 : Heads
-    Toss 30 : Tails
-    Toss 31 : Heads
+    Toss 29 : Tails
+    Toss 30 : Heads
+    Toss 31 : Tails
     Toss 32 : Heads
-    Toss 33 : Tails
+    Toss 33 : Heads
     Toss 34 : Tails
-    Toss 35 : Heads
-    Toss 36 : Heads
-    Toss 37 : Tails
+    Toss 35 : Tails
+    Toss 36 : Tails
+    Toss 37 : Heads
     Toss 38 : Tails
-    Toss 39 : Heads
-    Toss 40 : Heads
+    Toss 39 : Tails
+    Toss 40 : Tails
     Toss 41 : Tails
-    Toss 42 : Tails
-    Toss 43 : Heads
+    Toss 42 : Heads
+    Toss 43 : Tails
     Toss 44 : Tails
     Toss 45 : Tails
-    Toss 46 : Heads
-    Toss 47 : Tails
+    Toss 46 : Tails
+    Toss 47 : Heads
     Toss 48 : Tails
     Toss 49 : Heads
     Toss 50 : Heads
     Toss 51 : Heads
-    Toss 52 : Tails
-    Toss 53 : Heads
-    Toss 54 : Heads
-    Toss 55 : Heads
+    Toss 52 : Heads
+    Toss 53 : Tails
+    Toss 54 : Tails
+    Toss 55 : Tails
     Toss 56 : Tails
-    Toss 57 : Heads
-    Toss 58 : Heads
+    Toss 57 : Tails
+    Toss 58 : Tails
     Toss 59 : Tails
     Toss 60 : Heads
-    Toss 61 : Tails
-    Toss 62 : Tails
-    Toss 63 : Heads
+    Toss 61 : Heads
+    Toss 62 : Heads
+    Toss 63 : Tails
     Toss 64 : Heads
-    Toss 65 : Tails
-    Toss 66 : Heads
-    Toss 67 : Tails
-    Toss 68 : Tails
+    Toss 65 : Heads
+    Toss 66 : Tails
+    Toss 67 : Heads
+    Toss 68 : Heads
     Toss 69 : Heads
-    Toss 70 : Heads
+    Toss 70 : Tails
     Toss 71 : Heads
-    Toss 72 : Tails
+    Toss 72 : Heads
     Toss 73 : Heads
-    Toss 74 : Tails
+    Toss 74 : Heads
     Toss 75 : Heads
-    Toss 76 : Tails
-    Toss 77 : Heads
-    Toss 78 : Tails
+    Toss 76 : Heads
+    Toss 77 : Tails
+    Toss 78 : Heads
     Toss 79 : Tails
-    Toss 80 : Tails
-    Toss 81 : Heads
+    Toss 80 : Heads
+    Toss 81 : Tails
     Toss 82 : Tails
-    Toss 83 : Tails
-    Toss 84 : Heads
+    Toss 83 : Heads
+    Toss 84 : Tails
     Toss 85 : Tails
     Toss 86 : Heads
     Toss 87 : Heads
-    Toss 88 : Heads
+    Toss 88 : Tails
     Toss 89 : Heads
     Toss 90 : Heads
     Toss 91 : Heads
-    Toss 92 : Heads
-    Toss 93 : Tails
-    Toss 94 : Heads
-    Toss 95 : Tails
-    Toss 96 : Tails
-    Toss 97 : Tails
-    Toss 98 : Tails
+    Toss 92 : Tails
+    Toss 93 : Heads
+    Toss 94 : Tails
+    Toss 95 : Heads
+    Toss 96 : Heads
+    Toss 97 : Heads
+    Toss 98 : Heads
     Toss 99 : Tails
-    Toss 100 : Tails
-    ['Tails', 'Heads', 'Tails', 'Tails', 'Heads', 'Tails', 'Heads', 'Heads', 'Heads', 'Tails', 'Heads', 'Heads', 'Heads', 'Heads', 'Heads', 'Heads', 'Heads', 'Tails', 'Heads', 'Tails', 'Heads', 'Tails', 'Tails', 'Heads', 'Tails', 'Heads', 'Heads', 'Heads', 'Heads', 'Tails', 'Heads', 'Heads', 'Tails', 'Tails', 'Heads', 'Heads', 'Tails', 'Tails', 'Heads', 'Heads', 'Tails', 'Tails', 'Heads', 'Tails', 'Tails', 'Heads', 'Tails', 'Tails', 'Heads', 'Heads', 'Heads', 'Tails', 'Heads', 'Heads', 'Heads', 'Tails', 'Heads', 'Heads', 'Tails', 'Heads', 'Tails', 'Tails', 'Heads', 'Heads', 'Tails', 'Heads', 'Tails', 'Tails', 'Heads', 'Heads', 'Heads', 'Tails', 'Heads', 'Tails', 'Heads', 'Tails', 'Heads', 'Tails', 'Tails', 'Tails', 'Heads', 'Tails', 'Tails', 'Heads', 'Tails', 'Heads', 'Heads', 'Heads', 'Heads', 'Heads', 'Heads', 'Heads', 'Tails', 'Heads', 'Tails', 'Tails', 'Tails', 'Tails', 'Tails', 'Tails']
-    5545
+    Toss 100 : Heads
+    ['Heads', 'Heads', 'Heads', 'Heads', 'Heads', 'Tails', 'Heads', 'Heads', 'Tails', 'Tails', 'Tails', 'Heads', 'Tails', 'Tails', 'Heads', 'Heads', 'Tails', 'Tails', 'Tails', 'Tails', 'Tails', 'Tails', 'Tails', 'Heads', 'Heads', 'Heads', 'Heads', 'Heads', 'Tails', 'Heads', 'Tails', 'Heads', 'Heads', 'Tails', 'Tails', 'Tails', 'Heads', 'Tails', 'Tails', 'Tails', 'Tails', 'Heads', 'Tails', 'Tails', 'Tails', 'Tails', 'Heads', 'Tails', 'Heads', 'Heads', 'Heads', 'Heads', 'Tails', 'Tails', 'Tails', 'Tails', 'Tails', 'Tails', 'Tails', 'Heads', 'Heads', 'Heads', 'Tails', 'Heads', 'Heads', 'Tails', 'Heads', 'Heads', 'Heads', 'Tails', 'Heads', 'Heads', 'Heads', 'Heads', 'Heads', 'Heads', 'Tails', 'Heads', 'Tails', 'Heads', 'Tails', 'Tails', 'Heads', 'Tails', 'Tails', 'Heads', 'Heads', 'Tails', 'Heads', 'Heads', 'Heads', 'Tails', 'Heads', 'Tails', 'Heads', 'Heads', 'Heads', 'Heads', 'Tails', 'Heads']
+    5347
 
 
 Remember its a random experiment so the output will change everytime you run it. Here is the output sequence we'll use in this lesson: 
@@ -169,14 +168,14 @@ This is a safe assumption as it assumes independence between coin flips and henc
 
 
 ```python
-p_head = lst.count('Heads')/10
+p_head = lst.count('Heads')/100
 p_head
 ```
 
 
 
 
-    5.5
+    0.53
 
 
 
